@@ -1,17 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: [
-    'airbnb',
-    // 'eslint:recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:prettier/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', './index.js'],
+  parser: '@typescript-eslint/parser', // Установлен парсер TypeScript
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -19,7 +9,18 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'import', 'jsx-a11y'],
+  extends: [
+    'airbnb',
+    // 'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended', // Добавлен плагин TypeScript
+    'prettier/@typescript-eslint', // Отключает правила ESLint, которые конфликтуют с Prettier
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'index.js'], // Убраны относительные пути
+  plugins: ['react', 'import', 'jsx-a11y', '@typescript-eslint'], // Добавлен плагин TypeScript
   rules: {
     'jsx-a11y/no-autofocus': 0,
     'jsx-a11y/control-has-associated-label': 0,
@@ -39,6 +40,8 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off', // Отключаем требование явного определения типов для функций
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // Игнорировать неиспользуемые аргументы, начинающиеся с "_"
   },
   settings: {
     'import/resolver': {
