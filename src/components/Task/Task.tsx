@@ -25,7 +25,7 @@ interface TaskProps {
   updateTodoTime: (id: string, newTotalSeconds: number) => void
 }
 
-function Task({ todo }: TaskProps) {
+function Task({ todo, toggleTodoEdit: _, deleteTodo: __, toggleTodo: ___, updateTodoTime: ____ }: TaskProps) {
   const { deleteTodoHandler, toggleTodoHandler, toggleTodoEditHandler, startTimer, stopTimer } =
     useContext(TodosContext)
   const [isEditing, setIsEditing] = useState(false)

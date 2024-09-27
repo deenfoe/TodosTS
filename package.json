@@ -10,7 +10,6 @@
     "@types/react": "^18.3.9",
     "@types/react-dom": "^18.3.0",
     "date-fns": "^3.6.0",
-    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
@@ -31,13 +30,13 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:@typescript-eslint/recommended",  
+      "plugin:@typescript-eslint/recommended",
       "prettier"
     ],
     "plugins": [
-      "@typescript-eslint"  
+      "@typescript-eslint"
     ]
-     },
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -62,7 +61,7 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",  
+    "@typescript-eslint/parser": "^6.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
     "prettier": "3.3.2",

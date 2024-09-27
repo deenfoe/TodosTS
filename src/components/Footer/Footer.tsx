@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 
-import { TodosContext } from 'src/context/TodosContext'
+import { TodosContext } from '../../context/TodosContext'
 
 import './Footer.css'
 
-const Footer: React.FC = () => {
+function Footer() {
   const {
     deleteCompletedTodosHandler,
     activeTodosCount,

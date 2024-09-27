@@ -35,7 +35,7 @@ type TodosContextType = {
 
 const TodosContext = createContext<TodosContextType>(null!)
 
-const TodosProvider: React.FC<TodosProviderProps> = ({ children }) => {
+function TodosProvider({ children }: TodosProviderProps) {
   const [todos, setTodos] = useState<Todo[]>([])
   const [filter, setFilter] = useState<string>('All')
   const [timers, setTimers] = useState<{ [key: string]: NodeJS.Timeout }>({})

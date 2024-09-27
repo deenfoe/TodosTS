@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  parser: '@typescript-eslint/parser', // Установлен парсер TypeScript
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -16,11 +16,11 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended', // Добавлен плагин TypeScript
-    'prettier/@typescript-eslint', // Отключает правила ESLint, которые конфликтуют с Prettier
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'index.js'], // Убраны относительные пути
-  plugins: ['react', 'import', 'jsx-a11y', '@typescript-eslint'], // Добавлен плагин TypeScript
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'index.js'],
+  plugins: ['react', 'import', 'jsx-a11y', '@typescript-eslint'],
   rules: {
     'jsx-a11y/no-autofocus': 0,
     'jsx-a11y/control-has-associated-label': 0,
@@ -40,8 +40,18 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
-    '@typescript-eslint/explicit-module-boundary-types': 'off', // Отключаем требование явного определения типов для функций
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // Игнорировать неиспользуемые аргументы, начинающиеся с "_"
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
   settings: {
     'import/resolver': {
