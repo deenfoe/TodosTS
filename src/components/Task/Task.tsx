@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { formatDistanceToNow } from 'date-fns'
 import { ru } from 'date-fns/locale'
 
+import { TaskProps } from '../../types/types'
 import { TodosContext } from '../../context/TodosContext'
 import './Task.css'
 
@@ -9,20 +10,6 @@ function formatTime(totalSeconds: number) {
   const minutes = Math.floor(totalSeconds / 60)
   const seconds = totalSeconds % 60
   return `${minutes}:${seconds.toString().padStart(2, '0')}`
-}
-
-interface TaskProps {
-  todo: {
-    id: string
-    text: string
-    totalSeconds: number
-    created: Date
-    isCompleted: boolean
-  }
-  toggleTodoEdit: (id: string, newText: string) => void
-  deleteTodo: (id: string) => void
-  toggleTodo: (id: string) => void
-  updateTodoTime: (id: string, newTotalSeconds: number) => void
 }
 
 function Task({ todo, toggleTodoEdit: _, deleteTodo: __, toggleTodo: ___, updateTodoTime: ____ }: TaskProps) {
